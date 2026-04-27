@@ -1,0 +1,3 @@
+<button hlmBtn size="icon" variant="ghost" (click)="toggleTheme()">
+  <ng-icon hlm size="sm" [name]="(theme$ | async) === 'dark' ? 'radixSun' : 'radixMoon'"  />
+</button>

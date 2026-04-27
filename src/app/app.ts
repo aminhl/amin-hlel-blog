@@ -1,10 +1,11 @@
 import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
-import {HlmAccordionImports} from '@spartan-ng/helm/accordion';
+import {Navbar} from './shared/components/navbar/navbar';
+import {AuthorHero} from './core/components/author-hero/author-hero';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, HlmAccordionImports],
+  imports: [RouterOutlet, Navbar, AuthorHero],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
