@@ -1,34 +1,35 @@
 <div class="flex items-center justify-center p-6 sm:p-8 md:p-10">
-  <article class="max-w-2xl sm:max-w-3xl">
-    <h1 class="text-2xl sm:text-3xl font-bold cursor-default dark:text-gray-300 dark:hover:text-gray-100">Hi there, I'm Amin 👋😊</h1>
+  <article class="max-w-2xl sm:max-w-3xl" aria-labelledby="author-hero-heading">
+    <h1 id="author-hero-heading" class="text-2xl font-bold text-foreground sm:text-3xl">
+      Hi there, I'm Amin 👋😊
+    </h1>
     <ul class="flex flex-col gap-3 mt-5">
       <li class="text-sm sm:text-lg font-light leading-7 text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">💻 Backend Software Engineer focused on server-side development and system design</li>
       <li class="text-sm sm:text-lg font-light leading-7 text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">🌐 Passionate about networking protocols, operating systems, and database internals</li>
       <li class="text-sm sm:text-lg font-light leading-7 text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">⚙️ Focused on building reliable, efficient, and scalable backend services</li>
       <li class="text-sm sm:text-lg font-light leading-7 text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">🔐 Strong attention to performance, security, and clean software design principles</li>
-      <li class="text-sm sm:text-lg font-light leading-7 text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">🚀 Enjoys improving system reliability and contributing to well-structured, high-quality codebases</li>
     </ul>
     <p class="text-sm sm:text-lg mt-6 font-light text-gray-700 dark:text-gray-300 dark:hover:text-gray-100 cursor-default">I love Java ☕️ and interested in distributed systems 🕸️</p>
-    <div class="flex items-center gap-4 mt-6">
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="radixEnvelopeClosed"  />
+    <nav aria-label="Social and contact links" class="mt-6 flex flex-wrap items-center gap-4">
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="Email">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="radixEnvelopeClosed" />
       </button>
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixGithubLine"  />
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="GitHub profile">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixGithubLine" />
       </button>
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixTwitterXFill"  />
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="X (Twitter) profile">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixTwitterXFill" />
       </button>
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixFacebookFill"  />
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="Facebook profile">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixFacebookFill" />
       </button>
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixLinkedinFill"  />
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="LinkedIn profile">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixLinkedinFill" />
       </button>
-      <button class="cursor-pointer" hlmBtn size="icon" variant="ghost">
-        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixRssFill"  />
+      <button type="button" class="cursor-pointer" hlmBtn size="icon" variant="ghost" aria-label="RSS feed">
+        <ng-icon class="text-neutral-800 dark:text-gray-100" hlm size="base" name="remixRssFill" />
       </button>
-    </div>
+    </nav>
   </article>
 
 </div>

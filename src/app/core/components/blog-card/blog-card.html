@@ -1,23 +1,45 @@
-<div class="relative max-w-2xl mx-auto mt-8 flex flex-col items-center p-4 bg-white dark:bg-neutral-900 justify-center border-2 rounded-xl">
-  <article>
-    <figure class="mb-3">
-      <img src="https://blog.nebrass.fr/images/playing-with-reactive-quarkus.webp" alt="">
+<a
+  routerLink="/blog/playing-with-reactive-quarkus"
+  class="relative mx-auto mt-6 flex w-full max-w-2xl flex-col rounded-xl border-2 border-border bg-card p-4 text-card-foreground shadow-sm no-underline transition-[box-shadow,colors] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:mt-8 sm:p-6"
+  aria-labelledby="blog-post-reactive-quarkus-title"
+  aria-describedby="blog-post-reactive-quarkus-excerpt"
+>
+  <article class="flex w-full flex-col items-stretch gap-3">
+    <figure class="mb-0 overflow-hidden rounded-lg">
+      <img
+        class="aspect-video w-full object-cover"
+        src="https://blog.nebrass.fr/images/playing-with-reactive-quarkus.webp"
+        alt=""
+        width="800"
+        height="450"
+        loading="lazy"
+        decoding="async"
+      />
     </figure>
     <header>
-      <h2 class="text-lg md:text-xl font-medium text-gray-800 dark:text-gray-200 cursor-default">Playing with Reactive Quarkus</h2>
+      <h2
+        id="blog-post-reactive-quarkus-title"
+        class="text-lg font-medium text-foreground md:text-xl"
+      >
+        Playing with Reactive Quarkus
+      </h2>
     </header>
-    <p class="text-sm md:text-base mt-2 text-neutral-500 dark:text-gray-400 line-clamp-2">
+    <p
+      id="blog-post-reactive-quarkus-excerpt"
+      class="line-clamp-2 text-sm text-muted-foreground md:text-base"
+    >
       Here we go again for a new post 😁 After publishing my Quarkus book last September, I got many requests about creating reactive applications with the Quarkus Framework.
       Today, I will show you how to make a Reactive CRUD Application with the Quarkus Framework and backed by a PostgreSQL Database.
       Building our the Reactive Quarkus Application The full source code is available on my Github.
       We will generate our project using the code.quarkus.io. Our application will need 8 extensions from the portal:
       ...
     </p>
-    <footer class="flex items-center gap-0.5 mt-4">
-      <span class="text-neutral-500 text-sm font-light sm:font-medium dark:text-gray-400" title="2026-04-28 00:00:00 +0000 UTC">April 27, 2026 &nbsp;.&nbsp;</span>
-      <span class="text-neutral-500 text-sm font-light sm:font-medium dark:text-gray-400">14 min &nbsp;.&nbsp;</span>
-      <span class="text-neutral-500 text-sm font-light sm:font-medium dark:text-gray-400">Amin Hlel</span>
-      <a class="absolute top-0 left-0 right-0 bottom-0 cursor-pointer" routerLink="/blog/playing-with-reactive-quarkus" aria-label="post link to Playing with Reactive Quarkus" ></a>
+    <footer class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-light text-muted-foreground sm:font-medium">
+      <time datetime="2026-04-27">April 27, 2026</time>
+      <span aria-hidden="true">·</span>
+      <span><span class="sr-only">Reading time: </span>14 min</span>
+      <span aria-hidden="true">·</span>
+      <span>Amin Hlel</span>
     </footer>
   </article>
-</div>
+</a>

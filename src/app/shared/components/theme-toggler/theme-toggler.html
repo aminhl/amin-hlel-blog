@@ -1,3 +1,11 @@
-<button hlmBtn size="icon" variant="ghost" (click)="toggleTheme()">
-  <ng-icon hlm size="sm" [name]="(theme$ | async) === 'dark' ? 'radixSun' : 'radixMoon'"  />
+<button
+  type="button"
+  hlmBtn
+  size="icon"
+  variant="ghost"
+  (click)="toggleTheme()"
+  [attr.aria-label]="(theme$ | async) === 'dark' ? 'Switch to light theme' : 'Switch to dark theme'"
+  [attr.aria-pressed]="(theme$ | async) === 'dark'"
+>
+  <ng-icon hlm size="sm" [name]="(theme$ | async) === 'dark' ? 'radixSun' : 'radixMoon'" aria-hidden="true" />
 </button>
