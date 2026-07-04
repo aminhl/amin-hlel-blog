@@ -1,0 +1,14 @@
+<app-author-hero></app-author-hero>
+<section class="mx-auto mt-8 w-full max-w-3xl" aria-labelledby="latest-posts-heading">
+  <header class="mb-4">
+    <h2 id="latest-posts-heading" class="text-xl font-semibold text-foreground sm:text-2xl">
+      Latest Posts
+    </h2>
+  </header>
+
+  <div class="flex flex-col gap-6">
+    @for (post of posts; track post.slug) {
+      <app-blog-card [post]="post" />
+    }
+  </div>
+</section>

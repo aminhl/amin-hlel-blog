@@ -1,0 +1,26 @@
+@if (items().length > 0) {
+  <details class="mb-8 rounded-xl border border-border bg-card p-4" open>
+    <summary class="cursor-pointer text-sm font-medium text-foreground">
+      Table of Contents
+    </summary>
+
+    <nav class="mt-4" aria-label="Table of contents">
+      <ol class="space-y-2 text-sm">
+        @for (item of items(); track item.id) {
+          <li
+            [class.ml-4]="item.level === 3"
+            [class.ml-8]="item.level === 4"
+          >
+            <a
+              class="text-muted-foreground hover:text-foreground hover:underline"
+              [href]="'#' + item.id"
+              (click)="scrollToSection($event, item.id)"
+            >
+              {{ item.label }}
+            </a>
+          </li>
+        }
+      </ol>
+    </nav>
+  </details>
+}

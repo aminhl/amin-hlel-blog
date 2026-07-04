@@ -1,0 +1,5 @@
+<div class="flex flex-col gap-6">
+  @for (post of posts; track post.slug) {
+    <app-blog-card [post]="post" />
+  }
+</div>

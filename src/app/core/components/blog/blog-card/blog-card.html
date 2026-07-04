@@ -1,0 +1,51 @@
+<a
+  [routerLink]="['/blog', post().slug]"
+  class="relative flex w-full flex-col rounded-xl border-2 border-border bg-card p-4 text-card-foreground shadow-sm no-underline transition-[box-shadow,colors] hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background sm:p-6"
+  [attr.aria-labelledby]="'blog-post-' + post().slug + '-title'"
+  [attr.aria-describedby]="'blog-post-' + post().slug + '-excerpt'"
+>
+  <article class="flex w-full flex-col items-stretch gap-3">
+    <header>
+      <h3
+        [id]="'blog-post-' + post().slug + '-title'"
+        class="text-lg font-medium text-foreground md:text-xl"
+      >
+        {{ post().title }}
+      </h3>
+    </header>
+
+    <p
+      [id]="'blog-post-' + post().slug + '-excerpt'"
+      class="line-clamp-3 text-sm leading-6 text-muted-foreground md:text-base"
+    >
+      {{ post().description }}
+    </p>
+
+    @if (post().tags.length > 0) {
+      <ul class="flex flex-wrap gap-2" aria-label="Article tags">
+        @for (tag of post().tags; track tag) {
+          <li class="rounded-full border border-border px-2.5 py-1 text-xs text-muted-foreground">
+            {{ tag }}
+          </li>
+        }
+      </ul>
+    }
+
+    <footer class="mt-1 flex flex-wrap items-center gap-x-2 gap-y-1 text-sm font-light text-muted-foreground sm:font-medium">
+      <time [attr.datetime]="post().publishedAt">
+        {{ post().publishedAt }}
+      </time>
+
+      <span aria-hidden="true">·</span>
+
+      <span>
+        <span class="sr-only">Reading time: </span>
+        {{ post().readingTime }}
+      </span>
+
+      <span aria-hidden="true">·</span>
+
+      <span>{{ post().author.name }}</span>
+    </footer>
+  </article>
+</a>

@@ -1,0 +1,137 @@
+<section class="space-y-6 text-base leading-8 text-foreground">
+  @for (block of content(); track $index) {
+    @switch (block.type) {
+      @case ('heading') {
+        @if (block.level === 2) {
+          <h2
+            [id]="block.id"
+            class="group scroll-mt-24 pt-4 text-2xl font-bold tracking-tight text-foreground sm:text-3xl"
+          >
+            {{ block.text }}
+            <a
+              class="ml-2 text-muted-foreground opacity-0 no-underline transition-opacity group-hover:opacity-100 focus:opacity-100"
+              [href]="'#' + block.id"
+              aria-label="Link to this section"
+            >
+              #
+            </a>
+          </h2>
+        } @else if (block.level === 3) {
+          <h3
+            [id]="block.id"
+            class="group scroll-mt-24 pt-2 text-xl font-semibold tracking-tight text-foreground sm:text-2xl"
+          >
+            {{ block.text }}
+            <a
+              class="ml-2 text-muted-foreground opacity-0 no-underline transition-opacity group-hover:opacity-100 focus:opacity-100"
+              [href]="'#' + block.id"
+              aria-label="Link to this section"
+            >
+              #
+            </a>
+          </h3>
+        } @else {
+          <h4
+            [id]="block.id"
+            class="group scroll-mt-24 pt-2 text-lg font-semibold tracking-tight text-foreground"
+          >
+            {{ block.text }}
+            <a
+              class="ml-2 text-muted-foreground opacity-0 no-underline transition-opacity group-hover:opacity-100 focus:opacity-100"
+              [href]="'#' + block.id"
+              aria-label="Link to this section"
+            >
+              #
+            </a>
+          </h4>
+        }
+      }
+
+      @case ('paragraph') {
+        <p class="text-muted-foreground">
+          {{ block.text }}
+        </p>
+      }
+
+      @case ('image') {
+        <figure class="overflow-hidden rounded-xl border border-border bg-card">
+          <img
+            class="w-full object-cover"
+            [src]="block.src"
+            [alt]="block.alt"
+            [attr.width]="block.width"
+            [attr.height]="block.height"
+            loading="lazy"
+            decoding="async"
+          />
+
+          @if (block.caption) {
+            <figcaption class="px-4 py-3 text-center text-sm text-muted-foreground">
+              {{ block.caption }}
+            </figcaption>
+          }
+        </figure>
+      }
+
+      @case ('list') {
+        @if (block.ordered) {
+          <ol class="ml-6 list-decimal space-y-2 text-muted-foreground">
+            @for (item of block.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ol>
+        } @else {
+          <ul class="ml-6 list-disc space-y-2 text-muted-foreground">
+            @for (item of block.items; track item) {
+              <li>{{ item }}</li>
+            }
+          </ul>
+        }
+      }
+
+      @case ('quote') {
+        <blockquote class="border-l-4 border-border pl-4 italic text-muted-foreground">
+          <p>{{ block.text }}</p>
+
+          @if (block.cite) {
+            <cite class="mt-2 block text-sm not-italic">
+              — {{ block.cite }}
+            </cite>
+          }
+        </blockquote>
+      }
+
+      @case ('code') {
+        <figure class="overflow-hidden rounded-xl border border-border bg-card">
+          @if (block.filename) {
+            <figcaption class="border-b border-border px-4 py-2 text-sm text-muted-foreground">
+              {{ block.filename }}
+            </figcaption>
+          }
+
+          <pre class="overflow-x-auto bg-neutral-950 p-4 text-sm leading-7 text-neutral-100"><code>{{ block.code }}</code></pre>
+        </figure>
+      }
+
+      @case ('callout') {
+        <aside
+          class="rounded-xl border bg-card p-4"
+          [class.border-blue-500]="block.variant === 'info'"
+          [class.border-yellow-500]="block.variant === 'warning'"
+          [class.border-green-500]="block.variant === 'success'"
+          [class.border-red-500]="block.variant === 'danger'"
+        >
+          @if (block.title) {
+            <p class="font-medium text-foreground">
+              {{ block.title }}
+            </p>
+          }
+
+          <p class="mt-1 text-sm leading-6 text-muted-foreground">
+            {{ block.text }}
+          </p>
+        </aside>
+      }
+    }
+  }
+</section>

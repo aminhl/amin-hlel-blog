@@ -1,0 +1,21 @@
+@if (post(); as post) {
+  <article class="mx-auto w-full max-w-3xl">
+    <app-blog-header [post]="post" />
+    <app-blog-table-of-contents [items]="tableOfContents()" />
+    <app-blog-content-renderer [content]="post.content" />
+  </article>
+} @else {
+  <section class="mx-auto max-w-3xl py-16 text-center">
+    <h1 class="text-2xl font-bold text-foreground">
+      Blog post not found
+    </h1>
+
+    <p class="mt-2 text-muted-foreground">
+      The article you are looking for does not exist.
+    </p>
+
+    <a routerLink="/" class="mt-6 inline-block underline">
+      Back to home
+    </a>
+  </section>
+}

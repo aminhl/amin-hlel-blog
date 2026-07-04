@@ -1,5 +1,6 @@
-import { Component } from '@angular/core';
+import {Component, input} from '@angular/core';
 import {RouterLink} from '@angular/router';
+import {BlogPost} from '../../../models/Blog';
 
 @Component({
   selector: 'app-blog-card',
@@ -9,4 +10,8 @@ import {RouterLink} from '@angular/router';
   templateUrl: './blog-card.html',
   styleUrl: './blog-card.css',
 })
-export class BlogCard {}
+export class BlogCard {
+
+  readonly post = input.required<BlogPost>();
+
+}
